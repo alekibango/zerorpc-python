@@ -31,14 +31,15 @@ import gevent.event
 import gevent.local
 import gevent.lock
 
-import gevent_zmq as zmq
+#import gevent_zmq as zmq
+import zmq.green as zmq
 from .exceptions import TimeoutExpired, RemoteError, LostRemote
 from .channel import ChannelMultiplexer, BufferedChannel
 from .socket import SocketBase
 from .heartbeat import HeartBeatOnChannel
 from .context import Context
 from .decorators import DecoratorBase, rep
-import patterns
+from .patterns import *
 from logging import getLogger
 
 logger = getLogger(__name__)
